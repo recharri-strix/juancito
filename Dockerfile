@@ -36,7 +36,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer install
 
 RUN mv .env.example .env
-
+RUN php artisan migrate
 RUN php artisan key:generate
 
 RUN chmod 777 /var/www/html/ -R
