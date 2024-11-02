@@ -32,6 +32,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 #RUN php -r "unlink('composer-setup.php');"
 
 #RUN php composer.phar install
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+RUN service apache2 restart
 
 RUN composer install
 
